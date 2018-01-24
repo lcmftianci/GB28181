@@ -1,0 +1,34 @@
+﻿生成启动时间为 2018/1/24 11:58:22。
+     1>项目“D:\vsproj\GB28181\GB28181\GB28181.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /ID:\vsproj\GB28181\\include\osip /ID:\vsproj\GB28181\\include\mxml /ID:\vsproj\GB28181\\include\jthread /ID:\vsproj\GB28181\\include\jrtplib /ID:\vsproj\GB28181\\include /ZI /nologo /W1 /WX- /Od /D _CRT_SECURE_NO_WARNINGS /D WIN32 /D _MBCS /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt filenameio.cpp osipservice.cpp
+     1>cl : 命令行 warning D9038: 此平台上不支持 /ZI；请启用 /Zi
+         filenameio.cpp
+         osipservice.cpp
+     1>osipservice.cpp(582): warning C4002: “APP_WARRING”宏的实参太多
+     1>osipservice.cpp(582): warning C4313: “printf”: 格式字符串中的“%d”与“const char *”类型的参数 5 冲突
+     1>osipservice.cpp(598): warning C4002: “APP_WARRING”宏的实参太多
+     1>osipservice.cpp(598): warning C4313: “printf”: 格式字符串中的“%d”与“const char *”类型的参数 5 冲突
+     1>osipservice.cpp(842): warning C4553: “==”: 运算符不起任何作用；是否是有意使用“=”的?
+     1>osipservice.cpp(904): warning C4002: “APP_DEBUG”宏的实参太多
+     1>osipservice.cpp(904): warning C4313: “printf”: 格式字符串中的“%d”与“const char *”类型的参数 5 冲突
+     1>osipservice.cpp(1001): warning C4002: “APP_DEBUG”宏的实参太多
+     1>osipservice.cpp(1001): warning C4313: “printf”: 格式字符串中的“%d”与“const char *”类型的参数 5 冲突
+     1>osipservice.cpp(1030): warning C4002: “APP_DEBUG”宏的实参太多
+     1>osipservice.cpp(1030): warning C4313: “printf”: 格式字符串中的“%d”与“const char *”类型的参数 5 冲突
+     1>osipservice.cpp(1059): warning C4002: “APP_DEBUG”宏的实参太多
+     1>osipservice.cpp(1059): warning C4313: “printf”: 格式字符串中的“%d”与“const char *”类型的参数 5 冲突
+     1>osipservice.cpp(1079): warning C4002: “APP_ERR”宏的实参太多
+     1>osipservice.cpp(1079): warning C4313: “printf”: 格式字符串中的“%d”与“const char *”类型的参数 5 冲突
+     1>osipservice.cpp(1296): warning C4002: “APP_WARRING”宏的实参太多
+     1>osipservice.cpp(1396): warning C4002: “APP_DEBUG”宏的实参太多
+         正在生成代码...
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\vsproj\GB28181\x64\Release\GB28181.exe" /NOLOGO /LIBPATH:D:\vsproj\GB28181\\lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libcmt.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\vsproj\GB28181\x64\Release\GB28181.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\vsproj\GB28181\x64\Release\GB28181.lib" /MACHINE:X64 x64\Release\filenameio.obj
+         x64\Release\osipservice.obj
+         GB28181.vcxproj -> D:\vsproj\GB28181\x64\Release\GB28181.exe
+     1>已完成生成项目“D:\vsproj\GB28181\GB28181\GB28181.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.15
