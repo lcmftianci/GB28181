@@ -1,0 +1,13 @@
+INFO sip:bob@one.example.com SIP/2.0
+Via: SIP/2.0/UDP sip.example.com;branch=7c337f30d7ce.1
+  ;maddr=239.128.16.254;ttl=16
+Via: SIP/2.0/UDP mouse.wonderland.com
+From: Alice <sip:alice@wonderland.com>;tag=1
+To: Bob <sip:bob@example.com>
+Call-ID: 602214199@mouse.wonderland.com
+CSeq: 1 INVITE
+Contact: Alice <sip:alice@mouse.wonderland.com>
+Authentication-Info: 00000000000000000000000000000  a=
+Subject: SIP will be discussed, too
+Content-Length: 0
+

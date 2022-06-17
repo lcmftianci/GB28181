@@ -1,0 +1,4 @@
+.SH SEE ALSO
+Mini-XML Programmers Manual, https://www.msweet.org/mxml
+.SH COPYRIGHT
+Copyright \[co] 2003-2021 by Michael R Sweet.

@@ -1,0 +1,11 @@
+MESSAGE sip:philou@cdf2004.org SIP/2.0
+test: "{\"test1\":{\"foo1\":[\"ba,r11\"],\"foo2\":[\"bar21\",\"bar22\"]}}"
+Via: SIP/2.0/UDP cdf2004.org
+From: <sip:philou@cdf2004.org>;tag=19
+To: sip:philou@cdf2004.org
+Call-ID: 70710@cdf2004.org
+CSeq: 2 MESSAGE
+Mime-Version: 1.0
+Subject: championnat
+Content-Length: 0
+

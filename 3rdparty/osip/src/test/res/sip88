@@ -1,0 +1,14 @@
+expected_error:0 a very simple message
+SIP/2.0 200 OK
+To: <sip:fluffy@example.org>;tag=fb86ad2694115d75c77dce61523c9f07.ca6e
+From: <sip:fluffy@example.org>;tag=a1fd
+Via: SIP/2.0/UDP cj14:5002;branch=z9hG4bK-c87542-472987176-1;received=1.2.3.4
+Call-ID: 048cec32
+CSeq: 2 REGISTER
+Contact: <sip:fluffy@1.2.3.4:5002>;q=1.00;expires=1951
+Contact: <sip:fluffy@example.com:5002>;q=0.50;expires=10
+Contact: <sip:floppy@example.com:5002>;q=0.00;expires=100
+Server: The Server
+Content-Length: 0
+Warning: junk junk junk 
+

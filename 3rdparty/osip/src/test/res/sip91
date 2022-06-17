@@ -1,0 +1,28 @@
+expected_error:0 fix a memory leak error reported by email in version <= 5.1.0
+SIP/2.0 200 00
+proxy-authentication-info:00000000E00000000/00000 rÿ0;tranyport=UDP>
+Content-Type: a00000a0i00/0dp
+Call-Info:0<00000000004>;p0i0010y=1M
+Use0-http:@gent:@000000000
+ConteNt-Length:   169
+
+v=0
+o=000UA 1 1 I0 IP4 100020000080
+s=00C S00000
+c=I0 IP0 0000400
+t=0 0
+m000 nc=io 0000 0
+m000 nc=io 0000 00000p0i0010y=1M
+Use0-http:@gent:@000000000
+ConteNt-Length:   169
+
+v=0
+o=000UA 1 1 I0 IP4 100020000080
+s=00C S00000
+c=I0 IP0 0000400
+t=0 0
+m000 nc=io 0000 0
+m000 nc=io 0000 00000sips0P 014ÿÿÿ0
+m000 nc=io¬00000ps0P 014ÿÿÿsips0P 014ÿÿÿ0
+m000 nc=io 00000ps0P 014ÿÿÿ0
+m
