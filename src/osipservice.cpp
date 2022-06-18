@@ -1,43 +1,3 @@
-
-/*
-GB2818集成了sip通讯、RTP封装及PS流封装,实际上虽然GB28181里用了3个项目
-一、关于SIP：GB28181里只是简单用了开源的eXosip2和osip2
-
-
-摄像机回传视频
-struct RTPHeader
-{
-uint8_t csrccount:4;
-uint8_t extension:1;
-uint8_t padding:1;
-uint8_t version:2;
-uint8_t payloadtype:7;
-uint8_t marker:1;
-uint16_t sequencenumber;
-uint32_t timestamp;
-uint32_t ssrc;
-};
-细看比较复杂，其实就是一个12字节的头，后面是av数据。需要注意以下几个标识
-Marker:如果为1，表明该帧已经结束,为0表示是连接的音视频数据
-Sequencenumber:RTP包顺序，比如一帧K帧,200K,顺序可能是0-199，最后一个包Marker位为1。
-Ssrc：为流标识，实际可以多个流往一个端口上发，通过此位标识。
-Payloadlength:为该包的长度,如果是前面的包，此值通常为1024，最后一个长度为总长除1024的余数
-Payloadoffset:通常为12，rtp头信息。
-Timestamp:这个值并非每帧的时间戳，但是一个音频或视频包此项是相同的。
-
-ps流
-若干个PS包会组成一个AV包（Marker标识一帧结束），以00、00、01在个字节固定开头，至少需要6个字节，根据第4个字节判断是音频帧还是视频帧
-0xBA :I帧(关键帧)，后面还跟有8字节的ps pack header信息，即ps pack header信息长度为14字节。
-0xBB: // ps system header <18字节>
-0xBC:// ps map header <30字节>
-0xC0:// 音频头
-0xE0: //视频头 <19字节>
-最后根据各字节解析出音视频包的实际长度。比如一个I帧为64400，则后面的64400/1024=63个包全是该I帧数据。音频帧要简单一些，没有ps header及map header.
-
-udp接收视频
-*/
-
-
 #include "rtpsession.h"
 #include "rtppacket.h"
 #include "rtpudpv4transmitter.h"
@@ -64,20 +24,26 @@ udp接收视频
 
 using namespace jrtplib;
 
+#if 0
 #pragma comment(lib, "ws2_32.lib")
 #pragma comment(lib, "mxml1.lib")
 #pragma comment(lib, "eXosip.lib")
 #pragma comment(lib, "libcares.lib")
 #pragma comment(lib, "osip2.lib")
+#pragma comment(lib, "osipparser2.lib")
+#endif
 
+#ifdef _WIN32
 //Dnsapi.lib;Iphlpapi.lib;ws2_32.lib;eXosip.lib;osip2.lib;osipparser2.lib;Qwave.lib;libcares.lib;delayimp.lib;
-//忽略 libcmt.lib默认库
+//ignore libcmt.lib
 #pragma comment(lib, "Dnsapi.lib")
 #pragma comment(lib, "Iphlpapi.lib")
-#pragma comment(lib, "osipparser2.lib")
 #pragma comment(lib, "Qwave.lib")
+#pragma comment(lib,"WS2_32.lib")
 #pragma comment(lib, "delayimp.lib")
+#endif
 
+#if 0
 #ifdef DEBUG
 #pragma comment(lib, "jrtplib_d.lib") 
 #pragma comment(lib,"jthread_d.lib")
@@ -85,8 +51,8 @@ using namespace jrtplib;
 #else
 #pragma comment(lib, "jrtplib.lib") 
 #pragma comment(lib,"jthread.lib")
-#pragma comment(lib,"WS2_32.lib")
 #endif
+#endif 
 
 #define APREFIX_NONE   "\033[0m"
 #define APREFIX_RED    "\033[0;31m"
@@ -153,11 +119,11 @@ typedef struct RTP_HEADER
 	uint16_t extbit : 1;
 	uint16_t padbit : 1;
 	uint16_t version : 2;
-	uint16_t paytype : 7;  //负载类型
-	uint16_t markbit : 1;  //1表示前面的包为一个解码单元,0表示当前解码单元未结束
-	uint16_t seq_number;  //序号
-	uint32_t timestamp; //时间戳
-	uint32_t ssrc;  //循环校验码
+	uint16_t paytype : 7;  //payload type
+	uint16_t markbit : 1;  //1 decode unit,0 not end
+	uint16_t seq_number;  //sirial number
+	uint32_t timestamp; //
+	uint32_t ssrc;  //ssrc
 	//uint32_t csrc[16];
 } RTP_header_t;
 #elif
@@ -207,7 +173,7 @@ typedef struct program_stream_e_s {
 } program_stream_e;
 
 
-//相机信息和视频信息
+//camera info stream info
 liveVideoStreamParams g_liveVideoParams;
 
 FILE *g_fp;
@@ -241,18 +207,18 @@ void RegisterFailed(struct eXosip_t * peCtx, eXosip_event_t *je)
 }
 
 
-//从ini文件读取相关配置信息
+//config
 static int ParserIniFile()
 {
 	std::string strIniPath = GetMoudlePath();
 	strIniPath += "GB28181.ini";
-	::GetPrivateProfileString("GB28181", "platform_id", "你好", g_liveVideoParams.gb28181Param.platformSipId, MAX_PATH, strIniPath.c_str());	//获取平台ID
-	g_liveVideoParams.gb28181Param.platformSipPort = GetPrivateProfileInt("GB28181", "platform_port", 0, strIniPath.c_str());					//获取平台端口
-	::GetPrivateProfileString("GB28181", "platform_ip", "你好", g_liveVideoParams.gb28181Param.platformIpAddr, MAX_PATH, strIniPath.c_str());	//获取平台IP
-	::GetPrivateProfileString("GB28181", "local_id", "你好", g_liveVideoParams.gb28181Param.localSipId, MAX_PATH, strIniPath.c_str());		//获取本地ID
-	g_liveVideoParams.gb28181Param.localSipPort = GetPrivateProfileInt("GB28181", "local_port", 0, strIniPath.c_str());						//获取本地端口
-	::GetPrivateProfileString("GB28181", "local_ip", "你好", g_liveVideoParams.gb28181Param.localIpAddr, MAX_PATH, strIniPath.c_str());		//获取平台IP
-	g_liveVideoParams.cameraNum = GetPrivateProfileInt("GB28181", "camera_num", 0, strIniPath.c_str());										//相机数量
+	::GetPrivateProfileString("GB28181", "platform_id", "error", g_liveVideoParams.gb28181Param.platformSipId, MAX_PATH, strIniPath.c_str());	//platform id
+	g_liveVideoParams.gb28181Param.platformSipPort = GetPrivateProfileInt("GB28181", "platform_port", 0, strIniPath.c_str());					//platform port
+	::GetPrivateProfileString("GB28181", "platform_ip", "error", g_liveVideoParams.gb28181Param.platformIpAddr, MAX_PATH, strIniPath.c_str());	//platform ip
+	::GetPrivateProfileString("GB28181", "local_id", "error", g_liveVideoParams.gb28181Param.localSipId, MAX_PATH, strIniPath.c_str());		//local id
+	g_liveVideoParams.gb28181Param.localSipPort = GetPrivateProfileInt("GB28181", "local_port", 0, strIniPath.c_str());						//local post
+	::GetPrivateProfileString("GB28181", "local_ip", "error", g_liveVideoParams.gb28181Param.localIpAddr, MAX_PATH, strIniPath.c_str());		//platform id
+	g_liveVideoParams.cameraNum = GetPrivateProfileInt("GB28181", "camera_num", 0, strIniPath.c_str());										//camera number
 
 	if (g_liveVideoParams.cameraNum > 0 && g_liveVideoParams.cameraNum < CAMERA_SUPPORT_MAX) {
 		g_liveVideoParams.pCameraParams = (CameraParams *)malloc(sizeof(CameraParams)*g_liveVideoParams.cameraNum);
@@ -268,7 +234,7 @@ static int ParserIniFile()
 		GetPrivateProfileString("GB28181", "camera1_sip_id", "", p->sipId, MAX_PATH, strIniPath.c_str());
 		p->recvPort = GetPrivateProfileInt("GB28181", "camera1_recv_port", 0, strIniPath.c_str());
 
-		//获取相机登录名和密码
+		//camera name id pwd
 		GetPrivateProfileString("GB28181", "UserPwd", "", p->UserPwd, MAX_PATH, strIniPath.c_str());
 		GetPrivateProfileString("GB28181", "UserName", "", p->UserName, MAX_PATH, strIniPath.c_str());
 	}
@@ -278,23 +244,28 @@ static int ParserIniFile()
 	g_liveVideoParams.gb28181Param.dialog_id = -1;
 	g_liveVideoParams.gb28181Param.registerOk = 0;
 
-	fprintf(g_fp, "加载配置文件完成");
+	fprintf(g_fp, "load config ok");
+
+	printf("==>>platform sipid:%s\n", g_liveVideoParams.gb28181Param.platformSipId);
+	printf("==>>platform addr:%s\n", g_liveVideoParams.gb28181Param.platformIpAddr);
+	printf("==>>local sipid:%s\n", g_liveVideoParams.gb28181Param.localSipId);
+	printf("==>>local adddr:%s\n", g_liveVideoParams.gb28181Param.localIpAddr);
 
 	return 0;
 }
 
-//与相机进行消息交换的主线程
+//transfer msg with camera
 static void *MsgProcess(gb28181Params *p28181Params, void * pvSClientGB)
 {
 	char *p;
 	int keepAliveFlag = 0;
 	struct eXosip_t * peCtx = (struct eXosip_t *)pvSClientGB;
 
-	//监听并回复摄像机消息
+	//listen camera message and reply
 	while (p28181Params->running)
 	{
 		eXosip_event_t *je = NULL;
-		//处理事件
+		//process event
 		je = eXosip_event_wait(peCtx, 0, 4);
 		if (je == NULL)
 		{
@@ -304,7 +275,7 @@ static void *MsgProcess(gb28181Params *p28181Params, void * pvSClientGB)
 
 		switch (je->type)
 		{
-			case EXOSIP_MESSAGE_NEW:				//新消息到来
+			case EXOSIP_MESSAGE_NEW:				//new message
 			{
 				fprintf(g_fp, "new msg method:%s\n", je->request->sip_method);
 				if (MSG_IS_REGISTER(je->request))
@@ -347,7 +318,7 @@ static void *MsgProcess(gb28181Params *p28181Params, void * pvSClientGB)
 				RegisterSuccess(peCtx, je);
 				break;
 			}
-			case EXOSIP_MESSAGE_ANSWERED:				//查询
+			case EXOSIP_MESSAGE_ANSWERED:				//query
 			{
 				fprintf(g_fp, "answered method:%s\n", je->request->sip_method);
 				RegisterSuccess(peCtx, je);
@@ -385,7 +356,7 @@ static void *MsgProcess(gb28181Params *p28181Params, void * pvSClientGB)
 				RegisterSuccess(peCtx, je);
 				break;
 			}
-			case EXOSIP_CALL_RELEASED:         //请求视频流回复成功
+			case EXOSIP_CALL_RELEASED:         //camera reply ok
 			{
 				printf("recv EXOSIP_CALL_RELEASED\n");
 				RegisterSuccess(peCtx, je);
@@ -410,7 +381,7 @@ static void *MsgProcess(gb28181Params *p28181Params, void * pvSClientGB)
 	return NULL;
 }
 
-//初始化udp套接字
+//init udp socket
 int init_udpsocket(int port, struct sockaddr_in *servaddr, char *mcast_addr)
 {
 	int err = -1;
@@ -448,7 +419,7 @@ int init_udpsocket(int port, struct sockaddr_in *servaddr, char *mcast_addr)
 	return socket_fd;
 }
 
-//关闭套接字
+//close socket
 void release_udpsocket(int socket_fd, char *mcast_addr)
 {
 	closesocket(socket_fd);
@@ -457,11 +428,11 @@ void release_udpsocket(int socket_fd, char *mcast_addr)
 int inline ProgramStreamPackHeader(char* Pack, int length, char **NextPack, int *leftlength)
 {
 	//printf("[%s]%x %x %x %x\n", __FUNCTION__, Pack[0], Pack[1], Pack[2], Pack[3]);
-	//通过 00 00 01 ba头的第14个字节的最后3位来确定头部填充了多少字节
+	//00 00 01 ba
 	program_stream_pack_header *PsHead = (program_stream_pack_header *)Pack;
 	unsigned char pack_stuffing_length = PsHead->stuffinglen & '\x07';
 
-	*leftlength = length - sizeof(program_stream_pack_header)-pack_stuffing_length;//减去头和填充的字节
+	*leftlength = length - sizeof(program_stream_pack_header)-pack_stuffing_length;//remove head
 	*NextPack = Pack + sizeof(program_stream_pack_header)+pack_stuffing_length;
 	if (*leftlength<4)
 		return 0;
@@ -515,7 +486,7 @@ inline int ProgramShHead(char* Pack, int length, char **NextPack, int *leftlengt
 	return *leftlength;
 }
 
-//PS流解包
+//ps stream parse
 inline int Pes(char* Pack, int length, char **NextPack, int *leftlength, char **PayloadData, int *PayloadDataLen)
 {
 	program_stream_e* PSEPack = (program_stream_e*)Pack;
@@ -541,7 +512,7 @@ inline int Pes(char* Pack, int length, char **NextPack, int *leftlength, char **
 	return *leftlength;
 }
 
-//trp解析h264视频信息
+//parse h264
 int inline GetH246FromPs(char* buffer, int length, char *h264Buffer, int *h264length, char *sipId)
 {
 	int leftlength = 0;
@@ -566,7 +537,6 @@ int inline GetH246FromPs(char* buffer, int length, char *h264Buffer, int *h264le
 			&& NextPack[2] == '\x01'
 			&& NextPack[3] == '\xE0')
 		{
-			//接着就是流包，说明是非i帧
 			if (Pes(NextPack, leftlength, &NextPack, &leftlength, &PayloadData, &PayloadDataLen))
 			{
 				if (PayloadDataLen)
@@ -638,8 +608,6 @@ int inline GetH246FromPs(char* buffer, int length, char *h264Buffer, int *h264le
 	return *h264length;
 }
 
-
-//查错
 void checkerror(int rtperr)
 {
 	if (rtperr < 0)
@@ -749,13 +717,9 @@ protected:
 };
 
 
-/*
-运用开源库进行数据获取
-*/
-
+//recv stream by jrtp
 static unsigned __stdcall jrtplib_rtp_recv_thread(void* arg)
 {
-	//获取相机参数
 	CameraParams *p = (CameraParams *)arg;
 
 #ifdef WIN32
@@ -780,8 +744,6 @@ static unsigned __stdcall jrtplib_rtp_recv_thread(void* arg)
 	status = sess.Create(sessparams, &transparams);
 	checkerror(status);
 
-	//写入视频文件
-	//获取当前程序路径
 	std::string strPath = GetMoudlePath();
 	char filename[MAX_PATH];
 	strPath += p->sipId;
@@ -793,7 +755,6 @@ static unsigned __stdcall jrtplib_rtp_recv_thread(void* arg)
 		return NULL;
 	}
 
-	//开始接收流包
 	while (p->running)
 	{
 		sess.BeginDataAccess();
@@ -813,7 +774,6 @@ static unsigned __stdcall jrtplib_rtp_recv_thread(void* arg)
 
 					//std::cout << pack->GetPayloadData() << std::endl;
 
-					//写入文件
 					fwrite(pack->GetPayloadData(), 1, pack->GetPayloadLength(), p->fpH264);
 					// we don't longer need the packet, so
 					// we'll delete it
@@ -844,11 +804,6 @@ static unsigned __stdcall jrtplib_rtp_recv_thread(void* arg)
 	return 0;
 }
 
-/*
-以下函数接收视频花屏太严重，经过考虑专用另一个开源库进行rtp流的获取
-*/
-
-//接收相机回传的rtp视频流
 static unsigned __stdcall rtp_recv_thread(void *arg)
 {
 	int socket_fd;
@@ -888,8 +843,6 @@ static unsigned __stdcall rtp_recv_thread(void *arg)
 	int addr_len = sizeof(struct sockaddr_in);
 	int rtpHeadLen = sizeof(RTP_header_t);
 
-	//写入视频文件
-	//获取当前程序路径
 	std::string strPath = GetMoudlePath();
 	char filename[MAX_PATH];
 	strPath += p->sipId;
@@ -913,17 +866,14 @@ static unsigned __stdcall rtp_recv_thread(void *arg)
 	int ntotal = 0;
 	while (p->running)
 	{
-		//接收到的rtp流数据长度
 		recvLen = recvfrom(socket_fd, buf, RTP_MAXBUF, 0, (struct sockaddr*)&servaddr, (int*)&addr_len);
 
-		//如果接收到字字段长度还没有rtp数据头长，就直接将数据舍弃
 		if (recvLen > rtpHeadLen)
 		{
 			unsigned char *buffer = (unsigned char *)buf;
 
-			//写入文件
-			fprintf(g_fp, "符合要求的数据---------------------%x,,%x,,%x,,%x\n", buffer[0], buffer[1], buffer[2], buffer[3]);
-			ptr = psBuf + psLen;			//最新数据的头
+			fprintf(g_fp, "==>> ---------------------%x,,%x,,%x,,%x\n", buffer[0], buffer[1], buffer[2], buffer[3]);
+			ptr = psBuf + psLen;
 			rtpPsLen = recvLen - rtpHeadLen;
 #if 1
 			if (psLen + rtpPsLen < PS_BUF_SIZE)
@@ -937,9 +887,7 @@ static unsigned __stdcall rtp_recv_thread(void *arg)
 				continue;
 			}
 #endif
-			//打印视频流
-			fprintf(g_fp, "符合要求的数据%x,,%x,,%x,,%x\n", ptr[0], ptr[1], ptr[2], ptr[3]);
-			//视频流解析
+			fprintf(g_fp, "==>> %x,,%x,,%x,,%x\n", ptr[0], ptr[1], ptr[2], ptr[3]);
 			if (/*(*//*(*/ptr[0] == 0x00 && ptr[1] == 0x00 && ptr[2] == 0x01 && ptr[3] == 0xffffffBA/*) *//*|| (ptr[0] == 0x00 && ptr[1] == 0x00 && ptr[2] == 0x01 && ptr[3] == 0xBA)*//*) */ && psLen > 0)
 			{
 				if (cnt % 10000 == 0)
@@ -950,10 +898,9 @@ static unsigned __stdcall rtp_recv_thread(void *arg)
 				{
 					p->status = 1;
 				}
-				GetH246FromPs((char *)psBuf, psLen, h264buf, &h264length, p->sipId);			//如果
+				GetH246FromPs((char *)psBuf, psLen, h264buf, &h264length, p->sipId);
 				if (h264length > 0)
 				{
-					//写入文件
 					fwrite(h264buf, 1, h264length, p->fpH264);
 				}
 				memcpy(psBuf, ptr, rtpPsLen);
@@ -1061,7 +1008,6 @@ static unsigned __stdcall stream_keep_alive_thread(void *arg)
 	return NULL;
 }
 
-//开始接收视频流
 static int startStreamRecv(liveVideoStreamParams *pliveVideoParams)
 {
 	int i;
@@ -1100,10 +1046,8 @@ static unsigned __stdcall gb28181ServerThread(void *arg)
 	struct eXosip_t *eCtx;
 	gb28181Params *p28181Params = (gb28181Params *)(arg);
 
-	//初始化跟踪信息
 	TRACE_INITIALIZE(6, NULL);
 
-	//初始化eXosip和osip栈
 	eCtx = eXosip_malloc();
 	iReturnCode = eXosip_init(eCtx);
 	if (iReturnCode != OSIP_SUCCESS)
@@ -1116,7 +1060,6 @@ static unsigned __stdcall gb28181ServerThread(void *arg)
 		printf("eXosip_init successfully!\n");
 	}
 
-	//打开一个UDP socket 接收信号
 	iReturnCode = eXosip_listen_addr(eCtx, IPPROTO_UDP, NULL, p28181Params->localSipPort, AF_INET, 0);
 	if (iReturnCode != OSIP_SUCCESS)
 	{
@@ -1139,7 +1082,7 @@ static unsigned __stdcall gb28181ServerThread(void *arg)
 
 #if 1
 
-//请求视频信息，SDP信息
+//query video
 static int sendInvitePlay(char *playSipId, int rtp_recv_port, gb28181Params *p28181Params)
 {
 	char dest_call[256], source_call[256], subject[128];
@@ -1183,7 +1126,7 @@ static int sendInvitePlay(char *playSipId, int rtp_recv_port, gb28181Params *p28
 
 #else
 
-//请求视频信息，SDP信息
+//query video
 static int sendInvitePlay(char *playSipId, int rtp_recv_port, gb28181Params *p28181Params)
 {
 	char dest_call[256], source_call[256], subject[128];
@@ -1244,7 +1187,7 @@ static int sendInvitePlay(char *playSipId, int rtp_recv_port, gb28181Params *p28
 
 #endif
 
-//停止视频回传
+//stop video
 static int sendPlayBye(gb28181Params *p28181Params)
 {
 	struct eXosip_t *peCtx = p28181Params->eCtx;
@@ -1255,7 +1198,7 @@ static int sendPlayBye(gb28181Params *p28181Params)
 	return 0;
 }
 
-//请求摄像机回传视频
+//query realtime video
 static int startCameraRealStream(liveVideoStreamParams *pliveVideoParams)
 {
 	int i;
@@ -1270,7 +1213,7 @@ static int startCameraRealStream(liveVideoStreamParams *pliveVideoParams)
 	return 0;
 }
 
-//停止摄像机视频回传
+//stop realtime stream
 static int stopCameraRealStream(liveVideoStreamParams *pliveVideoParams)
 {
 	int i, tryCnt;
@@ -1303,7 +1246,7 @@ static int stopCameraRealStream(liveVideoStreamParams *pliveVideoParams)
 	return 0;
 }
 
-//验证相机状态
+//check camera status
 static int checkCameraStatus(liveVideoStreamParams *pliveVideoParams)
 {
 	int i;
@@ -1335,7 +1278,7 @@ static int checkCameraStatus(liveVideoStreamParams *pliveVideoParams)
 	return 0;
 }
 
-//停止接收
+//stop stream
 static int stopStreamRecv(liveVideoStreamParams *pliveVideoParams)
 {
 	int i;
@@ -1355,7 +1298,7 @@ const char *whitespace_cb(mxml_node_t *node, int where)
 	return NULL;
 }
 
-//发送请求catalog信息
+//query catalog
 static int sendQueryCatalog(gb28181Params *p28181Params)
 {
 	char sn[32];
@@ -1417,13 +1360,11 @@ static int sendQueryCatalog(gb28181Params *p28181Params)
 	return 0;
 }
 
-//主函数
 int main(int argc, char *argv[])
 {
 
 	HANDLE hHandle;
 
-	//打印日志
 	std::string strLogPath = GetMoudlePath();
 	strLogPath += "log.txt";
 	g_fp = fopen(strLogPath.c_str(), "wt");
@@ -1431,13 +1372,13 @@ int main(int argc, char *argv[])
 		return 0;
 
 
-	//1.解析配置文件获取相机相关配置
+	//parse config
 	ParserIniFile();
 
 	g_liveVideoParams.running = 1;
 	g_liveVideoParams.gb28181Param.running = 1;
 
-	//启动服务器线程，将监听端口传输给线程，用来监听相机传回来的消息
+	//start sip client server
 	if ((hHandle = (HANDLE)_beginthreadex(NULL, 0, gb28181ServerThread, (void*)&(g_liveVideoParams.gb28181Param), 0, NULL)) == INVALID_HANDLE_VALUE)
 	{
 		printf("error pthread_create gb28181ServerThread err");
@@ -1458,16 +1399,15 @@ int main(int argc, char *argv[])
 			exit(-1);
 	}
 
-	//发送请求catalog消息
+
 	sendQueryCatalog(&(g_liveVideoParams.gb28181Param));
 
-	//接收视频流
+
 	startStreamRecv(&g_liveVideoParams);
 	Sleep(1000);
 
 	int i = 0;
 
-	//发送请求视频消息
 	startCameraRealStream(&g_liveVideoParams);
 	while (g_liveVideoParams.running)
 	{

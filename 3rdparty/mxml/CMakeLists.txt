@@ -14,8 +14,9 @@ file(GLOB mxml_SRC ${CMAKE_CURRENT_SOURCE_DIR}/mxml-attr.c
                   ${CMAKE_CURRENT_SOURCE_DIR}/mxml-private.c
                   ${CMAKE_CURRENT_SOURCE_DIR}/mxml-search.c
                   ${CMAKE_CURRENT_SOURCE_DIR}/mxml-set.c
-                  ${CMAKE_CURRENT_SOURCE_DIR}/mxml-string.c
-                  ${CMAKE_CURRENT_SOURCE_DIR}/vcnet/mxml1.def)
+                  ${CMAKE_CURRENT_SOURCE_DIR}/mxml-string.c)
+                  # ${CMAKE_CURRENT_SOURCE_DIR}/vcnet/mxml1.def)
 
-add_library(mxml SHARED ${mxml_SRC})
-target_include_directories(mxml PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/)
+# add_library(mxml1 SHARED ${mxml_SRC})
+add_library(mxml1 STATIC ${mxml_SRC})
+target_include_directories(mxml1 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/)

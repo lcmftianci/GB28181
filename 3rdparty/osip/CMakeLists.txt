@@ -4,7 +4,9 @@ project(osip)
 
 # add_definitions(-DWIN32 -DENABLE_TRACE -DSYSTEM_LOGGER_ENABLED -D_CRT_SECURE_NO_DEPRECATE -D_LIB)
 
-add_definitions(-DDEBUG_MEM -D_CRT_SECURE_NO_WARNINGS)
+# add_definitions(-DDEBUG_MEM -D_CRT_SECURE_NO_WARNINGS)
+
+add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 
 file(GLOB osipparser_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/osipparser2/osip_accept.c
                     ${CMAKE_CURRENT_SOURCE_DIR}/src/osipparser2/osip_accept_encoding.c
@@ -82,14 +84,15 @@ file(GLOB osipparser_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/osipparser2/osip_accept
                     ${CMAKE_CURRENT_SOURCE_DIR}/src/osipparser2/parser.h
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/osipparser2/sdp_message.h
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/osipparser2/headers/osip_authentication_info.h
-                    ${CMAKE_CURRENT_SOURCE_DIR}/include/osipparser2/headers/osip_proxy_authentication_info.h
-                    ${CMAKE_CURRENT_SOURCE_DIR}/platform/vsnet/osipparser2.def)
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/osipparser2/headers/osip_proxy_authentication_info.h)
+                    # ${CMAKE_CURRENT_SOURCE_DIR}/platform/vsnet/osipparser2.def)
 
 
 
 add_library(osipparser STATIC ${osipparser_SRC})
 
-target_include_directories(osipparser PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+# target_include_directories(osipparser PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 
 file(GLOB osip_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/osip2/fsm_misc.c
@@ -117,9 +120,9 @@ file(GLOB osip_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/osip2/fsm_misc.c
                   ${CMAKE_CURRENT_SOURCE_DIR}/include/osip2/osip_dialog.h
                   ${CMAKE_CURRENT_SOURCE_DIR}/include/osip2/osip_fifo.h
                   ${CMAKE_CURRENT_SOURCE_DIR}/include/osip2/osip_mt.h
-                  ${CMAKE_CURRENT_SOURCE_DIR}/src/osip2/xixt.h
-                  ${CMAKE_CURRENT_SOURCE_DIR}/platform/vsnet/osip2.def)
+                  ${CMAKE_CURRENT_SOURCE_DIR}/src/osip2/xixt.h)
+                  # ${CMAKE_CURRENT_SOURCE_DIR}/platform/vsnet/osip2.def)
 
-add_library(osip SHARED ${osip_SRC})
+add_library(osip STATIC ${osip_SRC})
 target_include_directories(osip PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(osip PRIVATE osipparser)

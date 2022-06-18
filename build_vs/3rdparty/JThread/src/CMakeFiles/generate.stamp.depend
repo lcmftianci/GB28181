@@ -1,4 +1,0 @@
-# CMake generation dependency list for this directory.
-F:/mygitsource/GB28181/3rdparty/JThread/cmake/JThreadConfig.cmake.in
-F:/mygitsource/GB28181/3rdparty/JThread/src/CMakeLists.txt
-F:/mygitsource/GB28181/3rdparty/JThread/src/jthreadconfig.h.in

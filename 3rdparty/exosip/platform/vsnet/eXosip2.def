@@ -11,13 +11,11 @@ EXPORTS
      eXosip_listen_addr
      eXosip_set_socket
      eXosip_set_user_agent
-     eXosip_enable_ipv6
      eXosip_masquerade_contact
      
      eXosip_add_authentication_info
      eXosip_clear_authentication_info
      eXosip_default_action
-     eXosip_automatic_refresh
      eXosip_automatic_action
      eXosip_generate_random
      eXosip_hexa_generate_random
@@ -26,11 +24,10 @@ EXPORTS
      eXosip_event_free
      eXosip_event_wait
      eXosip_event_get
-     
-     eXosip_subscribe_build_initial_request
-     eXosip_subscribe_send_initial_request
-     eXosip_subscribe_build_refresh_request
-     eXosip_subscribe_send_refresh_request
+
+     eXosip_subscription_send_initial_request
+     eXosip_subscription_build_refresh_request
+     eXosip_subscription_send_refresh_request
      
      eXosip_insubscription_build_answer
      eXosip_insubscription_send_answer
@@ -48,9 +45,6 @@ EXPORTS
      eXosip_message_send_request
      eXosip_message_build_answer
      eXosip_message_send_answer
-     
-     eXosip_refer_build_request
-     eXosip_refer_send_request
      
      eXosip_build_publish
      eXosip_publish
