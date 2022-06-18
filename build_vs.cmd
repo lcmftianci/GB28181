@@ -10,5 +10,5 @@ cmake --build .
 @REM popd
 cd ..
 xcopy GB28181.ini build_vs\Debug\
-cd build\Debug
+cd build_vs\Debug
 gbexecer
