@@ -1,8 +1,8 @@
 # gb28181相机接入
 
-### 想用visual studio直接打开编译的check到v0.1版本，携带的第三方库是用vs2013编译的
+### 想用visual studio直接打开编译的check到14b671c5735b8d5392118952c9c7a233db070284版本，携带的第三方库是用vs2013编译的
 ```
-git checkout v0.1
+git checkout 14b671c5735b8d5392118952c9c7a233db070284
 ```
 ### 全源码编译 ，用cmake构建的
 ```
