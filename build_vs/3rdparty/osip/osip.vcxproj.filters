@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\fsm_misc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\ict.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\ict_fsm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\ist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\ist_fsm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\nict.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\nict_fsm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\nist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\nist_fsm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\osip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\osip_dialog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\osip_event.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\osip_time.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\osip_transaction.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\port_condv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\port_fifo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\port_sema.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\port_thread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osip2\internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osip2\osip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osip2\osip_condv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osip2\osip_dialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osip2\osip_fifo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osip2\osip_mt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\fsm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\src\osip2\xixt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\mygitsource\GB28181\3rdparty\osip\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{54A97303-5A7E-338D-A08A-3A1A3DB8C05E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{E3F77A21-FFB6-3778-8DD5-259996DC7D57}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

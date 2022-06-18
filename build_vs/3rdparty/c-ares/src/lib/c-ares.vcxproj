@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A4CAE730-B5E9-3B3C-A3AF-AD5B4A70B599}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.20348.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>c-ares</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">c-ares.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cares</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">c-ares.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cares</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">c-ares.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">cares</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">c-ares.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">cares</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares\include;F:\mygitsource\GB28181\3rdparty\c-ares\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;HAVE_CONFIG_H=1;CARES_BUILDING_LIBRARY;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WIN32_WINNT=0x0600;CMAKE_INTDIR="Debug";c_ares_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\bin\Debug\cares.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;HAVE_CONFIG_H=1;CARES_BUILDING_LIBRARY;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WIN32_WINNT=0x0600;CMAKE_INTDIR=\"Debug\";c_ares_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares\include;F:\mygitsource\GB28181\3rdparty\c-ares\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares\include;F:\mygitsource\GB28181\3rdparty\c-ares\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;advapi32.lib;iphlpapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/mygitsource/GB28181/build_vs/3rdparty/c-ares/lib/Debug/cares.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/mygitsource/GB28181/build_vs/3rdparty/c-ares/bin/Debug/cares.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares\include;F:\mygitsource\GB28181\3rdparty\c-ares\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H=1;CARES_BUILDING_LIBRARY;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WIN32_WINNT=0x0600;CMAKE_INTDIR="Release";c_ares_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ProgramDataBaseFileName>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\bin\Release\cares.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H=1;CARES_BUILDING_LIBRARY;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WIN32_WINNT=0x0600;CMAKE_INTDIR=\"Release\";c_ares_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares\include;F:\mygitsource\GB28181\3rdparty\c-ares\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares\include;F:\mygitsource\GB28181\3rdparty\c-ares\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;advapi32.lib;iphlpapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/mygitsource/GB28181/build_vs/3rdparty/c-ares/lib/Release/cares.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/mygitsource/GB28181/build_vs/3rdparty/c-ares/bin/Release/cares.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares\include;F:\mygitsource\GB28181\3rdparty\c-ares\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H=1;CARES_BUILDING_LIBRARY;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WIN32_WINNT=0x0600;CMAKE_INTDIR="MinSizeRel";c_ares_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ProgramDataBaseFileName>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\bin\MinSizeRel\cares.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H=1;CARES_BUILDING_LIBRARY;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WIN32_WINNT=0x0600;CMAKE_INTDIR=\"MinSizeRel\";c_ares_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares\include;F:\mygitsource\GB28181\3rdparty\c-ares\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares\include;F:\mygitsource\GB28181\3rdparty\c-ares\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;advapi32.lib;iphlpapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/mygitsource/GB28181/build_vs/3rdparty/c-ares/lib/MinSizeRel/cares.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/mygitsource/GB28181/build_vs/3rdparty/c-ares/bin/MinSizeRel/cares.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares\include;F:\mygitsource\GB28181\3rdparty\c-ares\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H=1;CARES_BUILDING_LIBRARY;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WIN32_WINNT=0x0600;CMAKE_INTDIR="RelWithDebInfo";c_ares_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\bin\RelWithDebInfo\cares.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H=1;CARES_BUILDING_LIBRARY;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WIN32_WINNT=0x0600;CMAKE_INTDIR=\"RelWithDebInfo\";c_ares_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares\include;F:\mygitsource\GB28181\3rdparty\c-ares\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\build_vs\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares;F:\mygitsource\GB28181\3rdparty\c-ares\include;F:\mygitsource\GB28181\3rdparty\c-ares\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;advapi32.lib;iphlpapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>F:/mygitsource/GB28181/build_vs/3rdparty/c-ares/lib/RelWithDebInfo/cares.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/mygitsource/GB28181/build_vs/3rdparty/c-ares/bin/RelWithDebInfo/cares.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\CMakeLists.txt">
+      <StdOutEncoding>UTF-8</StdOutEncoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule F:/mygitsource/GB28181/3rdparty/c-ares/src/lib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SF:/mygitsource/GB28181 -BF:/mygitsource/GB28181/build_vs --check-stamp-file F:/mygitsource/GB28181/build_vs/3rdparty/c-ares/src/lib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_config.h.cmake;F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\src\lib\Makefile.inc.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\src\lib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/mygitsource/GB28181/3rdparty/c-ares/src/lib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SF:/mygitsource/GB28181 -BF:/mygitsource/GB28181/build_vs --check-stamp-file F:/mygitsource/GB28181/build_vs/3rdparty/c-ares/src/lib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_config.h.cmake;F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\src\lib\Makefile.inc.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\src\lib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule F:/mygitsource/GB28181/3rdparty/c-ares/src/lib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SF:/mygitsource/GB28181 -BF:/mygitsource/GB28181/build_vs --check-stamp-file F:/mygitsource/GB28181/build_vs/3rdparty/c-ares/src/lib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_config.h.cmake;F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\src\lib\Makefile.inc.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\src\lib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule F:/mygitsource/GB28181/3rdparty/c-ares/src/lib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SF:/mygitsource/GB28181 -BF:/mygitsource/GB28181/build_vs --check-stamp-file F:/mygitsource/GB28181/build_vs/3rdparty/c-ares/src/lib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_config.h.cmake;F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\src\lib\Makefile.inc.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\src\lib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares__addrinfo2hostent.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares__addrinfo_localhost.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares__close_sockets.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares__get_hostent.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares__parse_into_addrinfo.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares__readaddrinfo.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares__sortaddrinfo.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares__read_line.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares__timeval.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_android.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_cancel.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_data.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_destroy.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_expand_name.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_expand_string.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_fds.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_free_hostent.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_free_string.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_freeaddrinfo.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_getaddrinfo.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_getenv.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_gethostbyaddr.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_gethostbyname.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_getnameinfo.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_getsock.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_init.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_library_init.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_llist.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_mkquery.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_create_query.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_nowarn.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_options.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_parse_a_reply.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_parse_aaaa_reply.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_parse_caa_reply.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_parse_mx_reply.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_parse_naptr_reply.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_parse_ns_reply.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_parse_ptr_reply.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_parse_soa_reply.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_parse_srv_reply.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_parse_txt_reply.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_parse_uri_reply.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_platform.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_process.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_query.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_search.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_send.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_strcasecmp.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_strdup.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_strerror.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_strsplit.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_timeout.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_version.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\ares_writev.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\bitncmp.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\inet_net_pton.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\inet_ntop.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\c-ares\src\lib\windows_port.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\ZERO_CHECK.vcxproj">
+      <Project>{E043AB04-E946-3D2B-ABF9-72B393650B9B}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

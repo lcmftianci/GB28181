@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXcall_api.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXconf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXinsubscription_api.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXmessage_api.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXoptions_api.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXosip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXpublish_api.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXregister_api.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXsubscription_api.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXtl_dtls.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXtl_tcp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXtl_tls.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXtl_udp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXtransport.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXutils.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\inet_ntop.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\jauth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\jcall.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\jcallback.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\jdialog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\jevents.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\jnotify.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\jpipe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\jpublish.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\jreg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\jrequest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\jresponse.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\jsubscribe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\milenage.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\misc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\rijndael.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\sdp_offans.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\exosip\src\udp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\include\eXosip2\eX_call.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\include\eXosip2\eX_message.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\include\eXosip2\eX_options.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\include\eXosip2\eX_publish.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\include\eXosip2\eX_register.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\include\eXosip2\eX_setup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\include\eXosip2\eX_subscribe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\include\eXosip2\eXosip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXosip2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\src\eXtransport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\src\inet_ntop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\src\jpipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\src\milenage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\exosip\src\rijndael.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\mygitsource\GB28181\3rdparty\exosip\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{54A97303-5A7E-338D-A08A-3A1A3DB8C05E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{E3F77A21-FFB6-3778-8DD5-259996DC7D57}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

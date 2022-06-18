@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{41BAF71F-BC39-31A6-A912-64EF1B8302F9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.20348.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>osipparser</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\osip\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">osipparser.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">osipparser</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\osip\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">osipparser.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">osipparser</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\osip\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">osipparser.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">osipparser</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\osip\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">osipparser.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">osipparser</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\mygitsource\GB28181\3rdparty\osip\CMakeLists.txt">
+      <StdOutEncoding>UTF-8</StdOutEncoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule F:/mygitsource/GB28181/3rdparty/osip/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SF:/mygitsource/GB28181 -BF:/mygitsource/GB28181/build_vs --check-stamp-file F:/mygitsource/GB28181/build_vs/3rdparty/osip/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\osip\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/mygitsource/GB28181/3rdparty/osip/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SF:/mygitsource/GB28181 -BF:/mygitsource/GB28181/build_vs --check-stamp-file F:/mygitsource/GB28181/build_vs/3rdparty/osip/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\osip\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule F:/mygitsource/GB28181/3rdparty/osip/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SF:/mygitsource/GB28181 -BF:/mygitsource/GB28181/build_vs --check-stamp-file F:/mygitsource/GB28181/build_vs/3rdparty/osip/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\osip\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule F:/mygitsource/GB28181/3rdparty/osip/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SF:/mygitsource/GB28181 -BF:/mygitsource/GB28181/build_vs --check-stamp-file F:/mygitsource/GB28181/build_vs/3rdparty/osip/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\mygitsource\GB28181\build_vs\3rdparty\osip\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_accept.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_accept_encoding.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_accept_language.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_alert_info.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_allow.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_authentication_info.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_authorization.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_call_id.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_call_info.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_contact.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_content_disposition.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_content_encoding.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_content_length.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_content_type.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_cseq.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_error_info.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_from.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_header.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_mime_version.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_proxy_authenticate.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_proxy_authentication_info.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_proxy_authorization.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_record_route.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_route.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_to.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_via.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\headers\osip_www_authenticate.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\internal.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\osip_body.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\osip_const.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\osip_headers.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\osip_list.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\osip_md5.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\osip_message.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\osip_parser.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\osip_port.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\osip_uri.h" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\include\osipparser2\sdp_message.h" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_accept.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_accept_encoding.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_accept_language.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_alert_info.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_allow.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_authentication_info.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_authorization.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_body.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_call_id.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_call_info.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_contact.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_content_disposition.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_content_encoding.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_content_length.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_content_type.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_cseq.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_error_info.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_from.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_header.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_list.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_md5c.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_message.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_message_parse.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_message_to_str.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_mime_version.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_parser_cfg.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_port.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_proxy_authenticate.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_proxy_authentication_info.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_proxy_authorization.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_record_route.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_route.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_to.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_uri.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_via.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\osip_www_authenticate.c" />
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\parser.h" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\sdp_accessor.c" />
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\osip\src\osipparser2\sdp_message.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\ZERO_CHECK.vcxproj">
+      <Project>{E043AB04-E946-3D2B-ABF9-72B393650B9B}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

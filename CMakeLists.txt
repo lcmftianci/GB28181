@@ -5,6 +5,8 @@ project(GB28181)
 add_subdirectory(3rdparty/JThread)
 add_subdirectory(3rdparty/JRTPLIB)
 add_subdirectory(3rdparty/mxml)
+add_subdirectory(3rdparty/osip)
+add_subdirectory(3rdparty/exosip)
 
 
 file(GLOB gb28181_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/osipservice.cpp

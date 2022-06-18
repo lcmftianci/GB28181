@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1E792AB0-8A0E-34C3-8AE5-9AA85CB17D75}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.20348.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\exosip\include;F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\exosip\include;F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\exosip\include;F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>F:\mygitsource\GB28181\3rdparty\exosip\include;F:\mygitsource\GB28181\3rdparty\osip\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\mygitsource\GB28181\CMakeLists.txt">
+      <StdOutEncoding>UTF-8</StdOutEncoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule F:/mygitsource/GB28181/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SF:/mygitsource/GB28181 -BF:/mygitsource/GB28181/build_vs --check-stamp-file F:/mygitsource/GB28181/build_vs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeCCompiler.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeCXXCompiler.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeRCCompiler.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\mygitsource\GB28181\build_vs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/mygitsource/GB28181/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SF:/mygitsource/GB28181 -BF:/mygitsource/GB28181/build_vs --check-stamp-file F:/mygitsource/GB28181/build_vs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeCCompiler.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeCXXCompiler.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeRCCompiler.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\mygitsource\GB28181\build_vs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule F:/mygitsource/GB28181/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SF:/mygitsource/GB28181 -BF:/mygitsource/GB28181/build_vs --check-stamp-file F:/mygitsource/GB28181/build_vs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeCCompiler.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeCXXCompiler.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeRCCompiler.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">F:\mygitsource\GB28181\build_vs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule F:/mygitsource/GB28181/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SF:/mygitsource/GB28181 -BF:/mygitsource/GB28181/build_vs --check-stamp-file F:/mygitsource/GB28181/build_vs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeCCompiler.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeCXXCompiler.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeRCCompiler.cmake;F:\mygitsource\GB28181\build_vs\CMakeFiles\3.23.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">F:\mygitsource\GB28181\build_vs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\ZERO_CHECK.vcxproj">
+      <Project>{E043AB04-E946-3D2B-ABF9-72B393650B9B}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\src\tools\acountry.vcxproj">
+      <Project>{30FA0620-32DB-3273-9A9D-0394380D31E4}</Project>
+      <Name>acountry</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\src\tools\adig.vcxproj">
+      <Project>{5E61D426-E7A3-3C10-AA3D-157992B02643}</Project>
+      <Name>adig</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\src\tools\ahost.vcxproj">
+      <Project>{432F000E-CF91-3FC0-B3BA-E987FECC312C}</Project>
+      <Name>ahost</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\c-ares\src\lib\c-ares.vcxproj">
+      <Project>{A4CAE730-B5E9-3B3C-A3AF-AD5B4A70B599}</Project>
+      <Name>c-ares</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\JRTPLIB\examples\example1.vcxproj">
+      <Project>{2B6BE3A4-0937-307A-8DA4-39C75FC23B0B}</Project>
+      <Name>example1</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\JRTPLIB\examples\example2.vcxproj">
+      <Project>{AE12C4A5-66FC-3D09-B111-CDF7BE892736}</Project>
+      <Name>example2</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\JRTPLIB\examples\example3.vcxproj">
+      <Project>{5D8B3952-0737-36C9-9250-652AFC16FF75}</Project>
+      <Name>example3</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\JRTPLIB\examples\example4.vcxproj">
+      <Project>{D7B896B3-17FB-3E10-BC12-19E2F396A312}</Project>
+      <Name>example4</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\JRTPLIB\examples\example5.vcxproj">
+      <Project>{83CB93BB-AEE6-3D42-BBF7-D6A2A16E1588}</Project>
+      <Name>example5</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\JRTPLIB\examples\example6.vcxproj">
+      <Project>{F202A958-8B58-3456-9C18-A4190491ED11}</Project>
+      <Name>example6</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\JRTPLIB\examples\example7.vcxproj">
+      <Project>{4D93AE03-AA36-3C0E-901A-31AF48031A4A}</Project>
+      <Name>example7</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\JRTPLIB\examples\example8.vcxproj">
+      <Project>{D31AC349-93B4-3310-8E54-19B923221A39}</Project>
+      <Name>example8</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\exosip\exosip.vcxproj">
+      <Project>{80B72886-3BCB-3C94-93A6-94321019B58E}</Project>
+      <Name>exosip</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\gbexecer.vcxproj">
+      <Project>{7579FBFA-577C-3B54-9FA9-D02F85903404}</Project>
+      <Name>gbexecer</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\JRTPLIB\src\jrtplib-static.vcxproj">
+      <Project>{3DA054AF-6895-3E75-921A-F3894AC13DB4}</Project>
+      <Name>jrtplib-static</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\JThread\src\jthread-static.vcxproj">
+      <Project>{CD4A84F7-60D4-364F-BA0F-7A0D83568700}</Project>
+      <Name>jthread-static</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\mxml\mxml1.vcxproj">
+      <Project>{A781D7F7-B1C5-34E9-8168-3C100C5D0476}</Project>
+      <Name>mxml1</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\osip\osip.vcxproj">
+      <Project>{44D2CC02-CE70-35E5-95D3-A7F962BB3AB5}</Project>
+      <Name>osip</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\mygitsource\GB28181\build_vs\3rdparty\osip\osipparser.vcxproj">
+      <Project>{41BAF71F-BC39-31A6-A912-64EF1B8302F9}</Project>
+      <Name>osipparser</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

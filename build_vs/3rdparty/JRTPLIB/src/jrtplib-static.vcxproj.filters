@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpapppacket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpbyepacket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpcompoundpacket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpcompoundpacketbuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcppacket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcppacketbuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcprrpacket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpscheduler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpsdesinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpsdespacket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpsrpacket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpcollisionlist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpdebug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtperrors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpinternalsourcedata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpipv4address.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpipv6address.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpipv4destination.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpipv6destination.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtplibraryversion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtppacket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtppacketbuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtppollthread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtprandom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtprandomrand48.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtprandomrands.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtprandomurandom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpsession.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpsessionparams.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpsessionsources.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpsourcedata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpsources.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtptimeutilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpudpv4transmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpudpv6transmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpbyteaddress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpexternaltransmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpsecuresession.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpabortdescriptors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtptcpaddress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtptcptransmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpapppacket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpbyepacket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpcompoundpacket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpcompoundpacketbuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcppacket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcppacketbuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcprrpacket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpscheduler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpsdesinfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpsdespacket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpsrpacket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtcpunknownpacket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpaddress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpcollisionlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\build_vs\3rdparty\JRTPLIB\src\rtpconfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpdebug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpdefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtperrors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtphashtable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpinternalsourcedata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpipv4address.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpipv4destination.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpipv6address.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpipv6destination.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpkeyhashtable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtplibraryversion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpmemorymanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpmemoryobject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtppacket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtppacketbuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtppollthread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtprandom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtprandomrand48.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtprandomrands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtprandomurandom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtprawpacket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpsession.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpsessionparams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpsessionsources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpsourcedata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpsources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpstructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtptimeutilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtptransmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtptypes_win.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\build_vs\3rdparty\JRTPLIB\src\rtptypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpudpv4transmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpudpv6transmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpbyteaddress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpexternaltransmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpsecuresession.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpsocketutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpabortdescriptors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtpselect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtptcpaddress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\rtptcptransmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\mygitsource\GB28181\3rdparty\JRTPLIB\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{54A97303-5A7E-338D-A08A-3A1A3DB8C05E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{E3F77A21-FFB6-3778-8DD5-259996DC7D57}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

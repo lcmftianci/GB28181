@@ -1,8 +1,0 @@
-﻿  eXcall_api.c
-  eXutils.c
-F:\mygitsource\GB28181\3rdparty\exosip\src\eXutils.c(1552,44): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-  inet_ntop.c
-  jdialog.c
-  udp.c
-  正在生成代码...
-  eXosip.vcxproj -> F:\mygitsource\GB28181\3rdparty\exosip\platform\vsnet\v142\Win32\Debug\eXosip.lib

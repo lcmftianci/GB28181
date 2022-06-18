@@ -1,0 +1,4 @@
+# CMake generation dependency list for this directory.
+F:/mygitsource/GB28181/3rdparty/c-ares/src/lib/CMakeLists.txt
+F:/mygitsource/GB28181/3rdparty/c-ares/src/lib/ares_config.h.cmake
+F:/mygitsource/GB28181/build_vs/3rdparty/c-ares/src/lib/Makefile.inc.cmake
