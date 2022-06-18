@@ -1,0 +1,423 @@
+eXosip2 (5.3.0) - 2021-11-22
+	* rewrite socket error management in order to apply them to all pending ICT and NICT transactions
+	  - with previous code, some transactions won't see the transport-error and will fail with unnecessary delay.
+	* add time information in cb_xixt_kill_transaction callback for debugging
+	* eXosip_lock will now include read on sockets
+	* [TLS] allow to accept wildcard with a new bit in tls_verify_client_certificate
+	* [TLS] disable loading OS certifiate with a new bit in tls_verify_client_certificate
+	* [TLS] I beleive there is no reason to cut packet in 500 bytes chunks on ios
+	* [EXOSIP_OPT_SET_CONTACT_DIALOG_EXTRA_PARAMS] new option to set Contact parameters in request/answers dialogs
+	* [AMSIP_OPTION_SET_SIP_INSTANCE] allow any value inside +sip.instance instead of only urn:uuid
+	* [epoll] fix eXosip_event_wait when using epoll implementation where events are distributed in the next eXosip_event_wait call
+
+eXosip2 (5.2.1) - 2020-05-21
+	* [ENABLE_MAIN_SOCKET] fix epoll mechanism for server socket with TCP and TLS
+	* [crash] check scheme upon processing 3xx
+	* [ssl] fix to be compatible with libressl
+	* [ssl] https://savannah.nongnu.org/patch/?10046 compatibility with openssl below 1.1.0
+	* fix when Content-Type indicates application/sdp, but there is no body
+	* [TLS] modify the code for TLS validation in order to improve logs and details on the connection
+	* use time_t instead of int for r_retry_after_delay variable [fix 1367a34ca commited on March 1st]
+	* eXosip_default_action will return OSIP_RETRY_LIMIT when limit is reached
+	* make sure to obey the Retry-After header from REGISTER reply
+	* use newer osip_timersub MACRO
+	* [bug#60024] fix openssl usage to always use callback mode for private key password, even when missing
+	* eXosip_reset_transports was not effective any more since [5.1.2] [commit 705643fa  2020-07-07] [do not use unless you understand it]
+	* [windows] a HANDLE is leaked when loading trusted certificates
+	* dp layer: handle WSAEMSGSIZE when buffer is too short for complete incoming messag
+	* cleaner code to retreive an SDP from a SIP message
+	* fix crash when ENABLE_MAIN_SOCKET is defined and epoll is used
+
+eXosip2 (5.2.0) - 2020-11-10
+	* fix memory and socket leak [major] [affected TCP, TLS, UDP: since 5.1.2, need update asap]
+	* fix to make sure a non yet established TLS descriptor with read descriptor set will be processed when no outgoing transaction is in a state to handle it [since 5.1.2]
+	* fix SRV rotation for TLS [was rotating TCP records instead of TLS] [since 5.1.2]
+	* fix duplicate packets for TCP and TLS when several outgoing NICT are happening at the same time [since 5.1.2]
+	* add outbound proxy parameter in sip_monitor tool
+
+	* ABI update: modification of "eXosip_tls_ctx_t"
+	  extend the structure to set
+	  - cipher list
+	  - add TLS openssl flags (to disable TLSv1, TLSv1.1, etc...)
+	  - add DTLS openssl flags (to disable DTLSv1, etc...)
+
+eXosip2 (5.1.3) - 2020-08-25
+	* EXOSIP_OPT_FORCE_CONNECTIONREUSE; new option to force reusing established socket for ACK and dialog message
+	* tls: fix building DH parameter with 5.1.2 and openssl < 1.1.0
+
+eXosip2 (5.1.2) - 2020-08-20
+	* tls: use RFC 5114 dh param with 2048 bits size.
+	* tls: use 2048 bits for ephemeral RSA key genearation.
+	* tls: use SSL_OP_NO_COMPRESSION to make sure it's disabled.
+	* tls: use SSL_OP_NO_TICKET to disable ticket.
+	* tls: use HIGH:!COMPLEMENTOFDEFAULT:!kRSA:!PSK:!SRP cipher list for higher security and less ciphers
+	* fix possible race condition in sample code [sip_reg and sip_monitor]
+	* new format style using clang-format.
+	* reduce and rewrite logs for readability.
+	* fix broken epoll implementation. (DO NOT USE 5.1.1 with epoll)
+	* rewrite UDP/TCP/TLS (and DTLS untested) for both select and epoll mode.
+	complete rewrite of socket (c-ares and UDP/TCP/TLS) in order to accelerate
+	socket esablishement, and correctly handle socket failure. The change also
+	help to recover faster after a socket failure and to switch to the next SRV
+	record available. This last feature was previously broken.
+
+	* Fix NAPTR/SRV on windows when CARES is not used. (not advised)
+	* ACK sent out of transaction with no existing connection may be sent later. (TCP/TLS)
+	* Upon TLS loss, try to use domain or NAPTR SNI when TLS connection is not initiated by an outgoing transaction.
+	* sip_monitor: new tool to monitor sip service
+	* add support for authentication using SHA-256 (openssl required)
+	* only use first supported proposed authentication when same realm is used
+	* fix: upon UDP errors, like ICMP buffer size may reach abnormal values (avoid useless reallocation)
+
+eXosip2 (5.1.1) - 2020-01-16
+	* new API:
+	Generate random string: (low entropy, only hexa)
+	int eXosip_hexa_generate_random(char *val, int val_size);
+	Generate random string: (high entropy when compiled with openssl)
+	int eXosip_byte_generate_random(char *val, int val_size)
+
+	* provide more entropy with eXosip_byte_generate_random (with openssl when available).
+	* fix TLS security issue reported by Alexander Traud regarding hostname validation when using NAPTR/SRV.
+	* add support for epoll (detected by configured) // becomes the default on linux platforms with autotools
+	* fix bug #56839: The cnonce should not be static -this is identified as replay attack by some services-.
+	* fix tcp and tls connection failure detection (accelerate error detection and recovery)
+	* fix: fixed a crash with DTLS
+
+eXosip2 (5.1.0) - 2019-03-27
+	* minor API update:
+	  API parameter change: eXosip_call_build_ack/eXosip_call_send_ack API to use tid instead of did as parameter.
+
+	* new API: add an API to insert one extra header in BYE:
+	  int eXosip_call_terminate_with_header(struct eXosip_t *excontext, int cid, int did, const char *header_name, const char *header_value);
+	  void eXosip_dnsutils_release(struct osip_naptr *naptr_record); required after usage of eXosip_dnsutils_naptr.
+
+	* new OPTION:
+	EXOSIP_OPT_SET_SESSIONTIMERS_FORCE option to force session timer to be used when remote side does not support it.
+
+	* structure change:
+	new param in eXosip_tls_credentials_t for pinning: "public_key_pinned". A file with the expected public key of server.
+	If you use eXosip_tls_ctx_t/eXosip_tls_credentials_t/EXOSIP_OPT_SET_TLS_CERTIFICATES_INFO, you need to recompile.
+
+	* fix processing response out of transaction. (avoid incorrect logs and extra work)
+	* fix https://savannah.nongnu.org/bugs/?54628 where ACK was only retransmitted for initial outgoing INVITE.
+	  fix: retransmit ACK for both initial INVITE and re-INVITE.
+	  fix: retransmit ACK for 2xx from forking (with a BYE) even if call does not exist.
+	  ACK for "old transaction" within the established dialog won't be retransmitted because the parameter only hold the latest ACK.
+	* fix bug report: https://savannah.nongnu.org/bugs/index.php?54624
+	  another patch to fix more issue related to cseq & PRACK.
+	  The newer code better handle forking use-case with PRACK.
+	  The newer code better handle several 1xx from same user.
+	* fix bug report: https://savannah.nongnu.org/bugs/index.php?54624 cseq wasn't increasing after a PRACK.
+	* improve portability code, detection of headers, windows compilation detection, sockaddr_storage was not correctly defined.
+	* fix udp layer: set ipbuf before using it.
+	* fix: allow socket descriptor to be 0 (posix requirement).
+	* fix: compile with any openssl version.
+	* allow compilation with OPENSSL_NO_DH, OPENSSL_NO_RSA, OPENSSL_NO_ECDH and/or OPENSSL_NO_DEPRECATED.
+	* remove old windows specific RSA obsolete code.
+	* add in eXtl_tls.c some explanations on usage of TLS with eXosip2. READ THEM.
+	* improve reliability for naptr/srv lookup (but still a short time).
+	* fix/improve _eXosip_mark_registration_expired: it was working correctly only if registration had previously failed.
+	* fix: attach call/dialog to CANCEL transaction (so EXOSIP_CALL_MESSAGE_ANSWERED will be received instead of EXOSIP_MESSAGE_ANSWERED).
+	* windows: fix DnsQuery to use UTF8 even if compiled without UNICODE (not applicable if you use c-ares).
+	* windows: add ENUM capability and improve NAPTR/SRV record (not applicable if you use c-ares).
+	* windows: you should use c-ares AND you should compile with UNICODE. (much better).
+	* add ability to define a dnsserver when doing NAPTR and SRV record (c-ares only).
+	* format of domain string for "eXosip_dnsutils_naptr" is "domain.com!+AUS|IP_DNSSERVER".
+	* fix for on android, DNS are not available any more (restricted access) (c-ares only).
+	* add support ENUM and regex for res_query API (not applicable if you use c-ares).
+	* sync with newer osip: use newer osip_naptr & osip_srv_record structures to hold ENUM sip result and
+	  improvements to retreive (and release) it via eXosip_dnsutils_naptr and eXosip_dnsutils_release APIs.
+	* TLS improvments: simplify client and server config, add ECDH cipher suite if missing,
+	  password for private key is optional, add support for public key pinning.
+	* improve to report EXOSIP_CALL_NOANSWER upon transport error for INVITE for faster detection.
+	* fix possible memory leak for X509 server certificate.
+	* fix crash if dialog has been already closed between 200ok and a received BYE.
+	* improve windows pipe replacement (use a free allocated port automatically).
+	* fix to optimize detection of TCP or TLS establishement, fix to optimize sending REGISTER after establishement.
+	* patch for call transfer to keep dialog after BYE, in order to be able to handle incoming/outgoing NOTIFY within calls after BYE.
+	* handle incoming UPDATE from alternative dialogs in early dialog mode.
+	* fix to reject any NOTIFY without established dialog coming later than 64 seconds after initial SUBSCRIBE.
+	* After a NAPTR query, some DNS server returns SUCCESS without NAPTR answers. In such use-case, fallback to manual SRV records.
+	* add SOCK_CLOEXEC option to sockets // add missing SO_KEEPALIVE options on TLS socket.
+	* EXOSIP_OPT_ENABLE_IPV6 now support 0(ipv4 only), 1(ipv6 only) and 2(ipv4 OR ipv6).
+	  With option 2, choice is made based on DNS and the stack can fallback between IPv4 and IPv6.
+	* fix possible memory leak when using wrong tid for eXosip_insubscription_send_answer.
+	* fix possible memory leak upon allocation error.
+	* fix leak upon syntax error in parameters provided for PUBLISH.
+	* fix leak upon syntax error in parameters provided for REGISTER.
+	* increase size of proto_ifs for IPv6 local address.
+	* RFC 2617 erratum: Errata ID: 1649 (minor issue).
+	* _exosip_isipv4addr: fix checking IPv4 address (minor issue).
+	* other minor updates.
+
+eXosip2 (5.0.0)
+	* major API update: add a new parameter to eXosip_call_build_prack in order to create the PRACK
+	for this specific response and not for the latest.
+	* major API update: removal of eX_refer.h API. REFER are now handled with subscriptions APIs.
+	eXosip_refer_build_request removed
+	eXosip_refer_send_request removed
+	* major API update: subscription now handle both SUBSCRIBE and REFER with the same APIs:
+	eXosip_subscription_build_initial_refer ADDED
+	eXosip_subscribe_build_initial_request renamed eXosip_subscription_build_initial_subscribe
+	eXosip_subscribe_send_initial_request renamed eXosip_subscription_send_initial_request
+	eXosip_subscribe_build_refresh_request renamed eXosip_subscription_build_refresh_request
+	eXosip_subscribe_send_refresh_request renamed eXosip_subscription_send_refresh_request
+	eXosip_subscribe_remove renamed eXosip_subscription_remove
+	EXOSIP_IN_SUBSCRIPTION_* and EXOSIP_SUBSCRIPTION_* events may now relate to REFER subscription.
+	* major API change: eXosip_automatic_refresh is obsolete and has been removed.
+	only use eXosip_automatic_action instead
+	* API update:
+	eXosip_options_send_request returns a positive transaction id (tid) on success.
+	eXosip_publish returns a positive transaction id (tid) on success.
+	note: eXosip_message_send_request was already returing the transaction id (tid) on success.
+	* new API options:
+	EXOSIP_OPT_REMOVE_PREROUTESET: to keep Route Set
+	EXOSIP_OPT_SET_SIP_INSTANCE: define +sip.instance parameter in Contact headers
+	EXOSIP_OPT_ENABLE_USE_EPHEMERAL_PORT: option to use/not use ephemeral port in Contact.
+	EXOSIP_OPT_ENABLE_REUSE_TCP_PORT: option to reuse port.
+	EXOSIP_OPT_AUTO_MASQUERADE_CONTACT: option to enable automatic masquerading for Contact headers.
+	EXOSIP_OPT_UDP_LEARN_PORT: obsolete and will be removed in the future.
+	EXOSIP_OPT_SET_DEFAULT_CONTACT_DISPLAYNAME: define a display name to be added in Contact headers
+	* new API options: (high load traffic use-case: DO NOT USE FOR COMMON USAGE)
+	EXOSIP_OPT_SET_MAX_MESSAGE_TO_READ: set the number of message to read at once for each network processing.
+	EXOSIP_OPT_SET_MAX_READ_TIMEOUT: set the period in nano seconds during we read for sip message.
+	EXOSIP_OPT_GET_STATISTICS: retreive numerous statistics.
+	* rewrite/update autotools and ./configure options
+	  --enable-pthread=[autodetect|force]
+	    autodetect POSIX threads or force -DHAVE_PTHREAD [default=autodetect]
+	  --enable-semaphore=[autodetect|semaphore|sysv]
+	    select your prefered semaphore [default=autodetect].
+
+	* fix selection of Contact header for 3xx (default to a tel/sip/sips one with any transport)
+	* keep to call context enough time to handle redirection.
+	* fix race condition for processing SRV results (not likely to happen)
+	* fix bug when reading sip message longuer than 8000 over UDP and TLS.
+	* improve eXosip_add_authentication_info to avoid duplicate credentials
+	* if a SUBSCRIBE is rejected, the context will be released automatically
+	* add failover after a DNS failure.
+	* fallback to SRV even if we receive a NOTFOUND reply for NAPTR.
+	* fix route set with strict router.
+	* rename usage of -DHAVE_CARES_H into -DHAVE_ARES_H real name of header.
+	* remove warnings mainly related to socket API (getnameinfo/bind/accept/recv/connect/sendto)
+	* rewrite all loop using iterator to improve performance (useful for high load traffic)
+	* rewrite Via and Contact management: both will now contains the IP of the real network interface
+	  instead of the default one.
+	* improve NAPTR failover, more reliable // add failover for 503 answer
+	* improve interval to force REGISTER refresh upon network error and failover.
+	* improve TCP socket management
+	* add a callback to simplify/optimize/accelerate usage of wakelocks in android application using exosip2.
+	* improve TLS, add TLSv1.1, TLSv1.2, disable weak cipher (FREAK) and enable ECDHE cipher.
+	* add support for SNI tls extension (openssl 1.0.2)
+	* add try/except on windows to catch possible missing qwave (windows server)
+	* implement a timeout (32 seconds) for establishing a TCP and TLS connection.
+	* if a connection is failing, report the failure asap.
+	* fix memory leak in eXosip_call_get_referto
+	* remove extra connect on socket for TCP and TLS (not allowed for tcp stream)
+	* fix to correctly discard INVITE retransmission with same branch received after original INVITE was replied
+	* add WSACleanup for each WSAStartup call (windows)
+	* do not include contact in BYE and CANCEL
+	* fix to use sips when appropriate (in Contact)
+	* fix to avoid handling negative content-length
+	* do not start naptr for incoming transactions.
+	* fix bug when rseq is empty but exist
+	* add support for QOS on windows.
+	* improve connection handling/failure detection, keep alive options, in TLS, TCP, UDP.
+	* update static IDs (cid/did/rid/pid) to use range from 0 to INT_MAX to avoid possible collision
+	* other minor updates.
+
+eXosip2 (4.1.0)
+	* improve timer and use UPDATE if advertised, INVITE otherwise.
+	* improve PRACK support.
+	* option to disable automatic BYE answer.
+	* option to enable/disable IPv6 per eXosip_t instance.
+	* option to disable DNS cache.
+	* improve network support for several eXosip_t instance.
+	  keepalive setting is per instance.
+	  ipv4/ipv6 setting is per instance.
+	  improve network setting to avoid conflict upon transport change.
+	* fix tcp and tls connect() for slow connection.
+	* use TCP_NODELAY on more platform.
+	* use Authorization header for 401 // simplify authentication code.
+	* minor expires for REGISTER improvments.
+	* copy call-info over SUBSCRIBE refresh.
+	* allow more TLS error if verification is disabled.
+	* fix if NO NAPTR is availble.
+	* add support for Windows Phone 8.
+	* fix to use cache for TCP and TLS.
+	* fix possible leaks on implementation errors.
+	* add TSC experimental support.
+
+eXosip2 (4.0.0)
+	* modify configuration APIs to use eXosip_set_option
+	* fix bug: do not create new PRACK if it already exist for an answer.
+	* update to latest osip // test time compensation for android.
+	* use ephemaral port in standard TCP and TLS version.
+	* return tid number so that we can match the response event.
+	* use system independant time for osip_gettimeofday on unix platform.
+	* major API update: several "struct eXosip_t" can be
+	  handled at the same time. This can be used to have several
+	  transport layer running at the same time.
+	* many tiny other change.
+
+eXosip2 (3.6.0)
+	* use optionnal c-ares DNS library for non blocking DNS access
+	  as well as improvments over DNS operation such as NAPTR and
+	  SRV records.
+	* again, so many minor change/fix/improvments, sorry for not
+	  being able to have an history here... The git on savannah
+	  will bring you all details!
+
+eXosip2 (3.5.0)
+	* iphone with TCP/TLS background support.
+	* android support.
+	* a lot of minor change/fix/improvments, sorry for not being
+	  able to have an history here...
+
+eXosip2 (3.4.0)
+	* modification to allow using "windows certificate store" for TLS.
+	* handle keep alive for TCP/TLS.
+	* fix when receiving additionnal CRLF on reliable transport.
+	* modification to allow non-blocking socket for reliable transport. (TLS/TCP)
+	* fix tag issue with application where tag is missing.
+	* fix compilation for mingw
+	* fix Contact header in request within dialog for non-udp protocol.
+	* fix some DNS issue with vista?
+	* remove 481 auto answer for unsolicited NOTIFY.
+	* fix static id range.
+	* initial code for TCP fragmentation.
+	* osip_list prototypes and warnings fix
+	* fix transport matching for redirection using other transport than udp
+
+eXosip2 (3.3.0)
+	* Fix when 200ok include a contact with an empty line parameter.
+	* Fix for replaces header longuer than 256 char.
+	* Fix SRV record with more than 10 answers.
+	* Sort SRV record.
+	* Option to disable NAPTR requests.
+
+eXosip2 (3.2.0)
+	* Improve TLS support and add an API for ssl information & files.
+	* return new error code for all API.
+	* remove automatic answers to PRACK. (must be done in application now)
+	* remove automatically outgoing non established susbscriptions.
+
+eXosip2 (3.1.0)
+	* AKA authentication.
+	* improve compliance & flexibility.
+
+eXosip2 (3.0.4)
+	* fix building SUBSCRIBE refresh.
+	* fix compliance issue with refer-to to-tag/from-tag parameters.
+	* fix bug for retransmissions or ACK with proxy that resolve
+	  to several IP.
+	* handle the "expires" parameter to update registration interval.
+	* handle the "expires" parameter to update publication interval.
+	* handle automatically publish refresh, and some error codes (423).
+
+eXosip2 (3.0.3)
+	* Add TLS support.
+	* rewrite transport layer.
+	* add line= parameter in Contact headers for registrations.
+	* a few changes related to interop. issues.
+	* add missing *_REQUESTFAILURE events on no answer.
+	* Update registration interval when Expires header is in 200ok.
+
+eXosip2 (3.0.2)
+	* fix call transfer issue with "Replaces" header.
+	* allow build/run eXosip in non-threaded model (without -DOSIP_MT).
+	* initial support for ucos.
+	* add support for qop authentication.
+	* remove registration context immediatly upon eXosip_register_remove.
+	* TCP: fix missing Contact in INVITE sent.
+	* TCP: fix missing "transport" in Contact for answers within dialog.
+	* TCP: fix possible race conditions.
+
+eXosip2 (3.0.1)
+	* add Windows CE support with Visual Studio 2005
+	  (WM5.0,PocketPC 2003/2005, Smartphone)
+	* Update to osip2-3.0.1
+	* Add SRV record capabilities.
+	* add new OPTIONS: do not send 101, remove pre-route set from message.
+
+eXosip2 (2.2.3)
+	* announce NOTIFY answers to application.
+	* fix authentication bugs from previous patch.
+	* fix TCP bug
+	* fix using code 699
+
+eXosip2 (2.2.2)
+	* new version synchronized with osip2
+	* total rewrite of eXosip.
+	*   -> new API for more flexibility
+	*   ->   media negotiation must now be handled outside of eXosip2
+
+eXosip (0.9.1)
+	* add publish support through a nice API.
+
+eXosip (0.9.0)
+	* improve presence support (busy, away, onthephone...).
+	* new eXosip_automatic_refresh() to refresh SUBSCRIBE and REGISTER.
+	* Fix dialog establishement when receiving NOTIFYs.
+	* This ChangeLog has not been updated seriously... Many changes
+	* have been done but they don't appear here. Sorry.
+	* status of libexosip:
+	*   call transfer : OK
+	*   redirection of calls (3XX) : OK
+	*   SUB/NOTIFY for presence : nearly OK (usable)
+	*   authenthication (REGISTER and INVITE only) : ok
+
+eXosip (0.8.0)
+	* fix processing of 180 Ringing?
+	* fix bug when BYE is processed before a 2xx for INVITE.
+
+eXosip (0.7.7)
+	* memory leaks.
+	* tiny bugs, code clean-up.
+
+eXosip (0.7.6)
+	* fix bug when 1st proxy is using strict routing.
+	* support for IPv4 and IPv6.
+	* do not send 180 Ringing any more on new INVITEs.
+	* close correctly rtp streams in josua.
+	* improve the eXosip_event_wait method.
+	* performance updated on win32 for event handling.
+
+eXosip (0.7.5)
+	* small improvements for josua.
+	* patch for IPv6 (uncomplete)
+	* patch for authentication
+	* improve configure.in file
+	* allow fancy reason phrase in SIP answer.
+	* allow to NAT traversal (firewall IP in SDP packet).
+
+eXosip (0.7.3)
+	* warning fix.
+	* support for multiple registrations.
+	* support for authentifications for REGISTER.
+
+eXosip (0.7.2)
+	* add RTP support with common ucl library.
+	* fix some memory leak.
+	* improve facility to change the local_sdp_port.
+	* add an event when ACK for 2xx is received.
+
+eXosip (0.7.1)
+	* rewrite of header files and new directory architecture.
+	* support for INFO and OPTIONS within calls.
+	* support for AUDIO.
+
+eXosip (0.6.3)
+	* use of event oriented interface in josua.
+
+eXosip (0.6.2)
+	* New Event oriented interface with applications.
+	* support for both MSN or compliant UAs.
+	* SUBSCRIBE/NOTIFY for SIMPLE support.
+	* script for adding/updating subscribers. (eXosip_addsubscriber.sh)
+
+eXosip (0.6.1)
+	* INVITE, CANCEL, BYE, REGISTER, MESSAGE, REFER
+	* script for adding/updating contact. (eXosip_addfreind.sh)
+	* script for adding/updating identity. (eXosip_addidentity.sh)
+	* NCURSES interface.
+	* options for current session.

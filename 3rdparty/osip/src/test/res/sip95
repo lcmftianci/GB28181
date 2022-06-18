@@ -1,0 +1,11 @@
+expected_error:0 offbyone reported by email affecting version <=5.1.0
+SIP/2.0 200 00
+Via:0000/000/000 00@0000
+To: <sip:00000@@00000000000>;000=00I000000000000
+From: <sip:0000@000000000000>;0000000
+proxy-authenticFom: <sip:0000@000000000000>;0000000
+proxy-authentication-info:realsip:0000 000000A00:0000;00000=00000;000000000000
+authentication-iication-infom: <sip:0000000000000
+proxy-authentication-info:00000sip:0000000000000oxy-authentication-info:00000sip:00000000000000000000000000icate: 000ithm=000
+U000cnum00000000:0000;00000=00000;000000=X 0
+

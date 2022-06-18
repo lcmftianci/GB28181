@@ -1,0 +1,12 @@
+build_ninja 
+build 
+.vs 
+*.vcxproj.user 
+*.obj 
+*.tlog 
+*.pdb 
+*.idb 
+*.log 
+3rdparty/osip/platform/vsnet/osipparser2/Win32/Debug/osipparser2.lib.recipe 
+*.lib 
+build_vs 
